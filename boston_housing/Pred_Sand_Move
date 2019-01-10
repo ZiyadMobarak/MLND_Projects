@@ -1,0 +1,138 @@
+###########################################
+# Script: Pred_Sand_Move.py
+# Description:
+#   This script will load the data that have the features to predict sand movement. The script will load the data,
+#   pre-process it and find the optimal prediction model using different hyper-parameters. Then it will predict the
+#   sand movement using the two created models. Note that training and testing predictions need to be given by an
+#   Aramco expert.
+#
+#   Revision History:
+#   (Name)              (Date)          (Description)
+#   Ziyad AlGhamdi      19/12/2018      Initial implementation.
+#
+# Team#22 members:
+#   - Hind AlDossari
+#   - Mayadah AlHashim
+#   - Fayrouz Essa
+#   - Hani Baatiyyah
+#   - Ziyad AlGhamdi
+###########################################
+
+# Import libraries necessary for this project
+import numpy as np
+import pandas as pd
+from sklearn.metrics import r2_score # Import metrics to measure our performance
+from sklearn.model_selection import train_test_split # Import 'train_test_split' in order to split the data
+from sklearn.model_selection import ShuffleSplit # Multiple splits for cross validation
+from sklearn.metrics import make_scorer # Import the metrics scorer to create a score function
+from sklearn.linear_model import DecisionTreeRegressor # Import the decision tree regressor
+from sklearn.linear_model import LinearRegression # Import the linear regressor
+from sklearn.model_selection import GridSearchCV # Import grid search to find the optimal tree and linear models
+
+
+###########################################
+# Supportive functions:
+###########################################
+def performance_metric(y_true, y_predict):
+    """ Return the performance socre between the actual sand movement and predictions"""
+
+    # Calculate the performance score between the actual sand movement and predictions using r2 score
+    score = r2_score(y_true, y_predict)
+
+    # Return the performance score
+    return score
+
+
+def fit_model_tree(X, y):
+    """ Performs grid search to find the best model on the given data for training"""
+
+    # Create cross-validation sets from the training data we have
+    cv_sets = ShuffleSplit(n_splits=10, test_size=0.20)
+
+    # Create a decision tree regressor object
+    regressor = DecisionTreeRegressor()
+
+    # Create list of max depth hyper-parameters from 1 to 10
+    params = {'max_depth': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+
+    # Use the performance matrics we've created to measure the performance of the created models
+    scoring_fnc = make_scorer(performance_metric)
+
+    # Grid search using the given hyper-parameters for the best estimator
+    grid = GridSearchCV(regressor, params, scoring=scoring_fnc)
+
+    # Fit the grid search object to the data to compute the optimal model
+    grid = grid.fit(X, y)
+
+    # Return the optimal model after fitting the data
+    return grid.best_estimator_
+
+
+def fit_model_linear(X, y):
+    """ Performs grid search to find the best model on the given data for training"""
+
+    # Create cross-validation sets from the training data we have
+    cv_sets = ShuffleSplit(n_splits=10, test_size=0.20)
+
+    # Create a linear regressor object
+    regressor = LinearRegression()
+
+    # No parameters to be specified for the linear regression
+    params = {}
+
+    # Use the performance matrics we've created to measure the performance of the created models
+    scoring_fnc = make_scorer(performance_metric)
+
+    # Grid search using the given hyper-parameters for the best estimator
+    grid = GridSearchCV(regressor, params, scoring=scoring_fnc)
+
+    # Fit the grid search object to the data to compute the optimal model
+    grid = grid.fit(X, y)
+
+    # Return the optimal model after fitting the data
+    return grid.best_estimator_
+
+
+###########################################
+# Load the weather history data and do any required pre processing
+###########################################
+data = pd.read_csv('weather_history.csv')
+sand_movements = data['sand_predictions'] # TODO ..
+features = data.drop('sand_predictions', axis=1) # TODO ..
+# TODO add predictions by Aramco expert
+
+# Shuffle and split the data into training and testing randomly
+X_train, X_test, y_train, y_test = train_test_split(features, sand_movements, test_size = 0.2)
+
+# Print success message at this point
+print("The data was splitted successfully.")
+
+# Get the best tree model from the given hyper-parameter
+tree_reg = fit_model_tree(X_train, y_train)
+linear_reg = fit_model_linear(X_train, y_train)
+
+# Fit the data using the two models created
+tree_reg.fit(X_train, X_test)
+linear_reg.fit(X_train, X_test)
+
+# Predict the values on the
+tree_preds = tree_reg.predict(y_train)
+linear_preds = linear_reg.predict(y_train)
+
+# Print the accuracy given from each model prediction
+tree_score = performance_metric(y_test, tree_preds)
+linear_score = performance_metric(y_test, tree_preds)
+
+# Print the accuracy of each model:
+print("The accuracy of the tree model ${}".format(tree_score))
+print("The accuracy of the linear model ${}".format(linear_score))
+
+###########################################
+# Calculating some basic statistics
+# This section is desined for human manual analysis of the loaded data
+###########################################
+# Just as an example: find the worst wind speed
+worst_wind_speed = np.max(sand_movements)
+
+# Print the results from the above statements
+print("Maximum speed wind: ${}".format()) # TODO finding the maximum

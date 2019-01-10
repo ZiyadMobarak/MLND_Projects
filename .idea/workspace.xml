@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b1c0414-4baa-4b5b-adf2-747df4ce79f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/titanic_survival_exploration/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/titanic_survival_exploration/titanic_survival_exploration.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/titanic_survival_exploration/titanic_survival_exploration.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="5b1c0414-4baa-4b5b-adf2-747df4ce79f1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,40 +12,66 @@
     <session id="1665747057">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ipynb" value="7" />
-          <entry key="py" value="2" />
+          <entry key="Pred_Sand_Move" value="1" />
+          <entry key="ipynb" value="8" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IPNB" value="7" />
-          <entry key="Python" value="2" />
+          <entry key="IPNB" value="8" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="466" />
+          <entry key="Python" value="3658" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Pred_Sand_Move" value="3192" />
           <entry key="py" value="466" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/boston_housing/visuals.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/boston_housing/Pred_Sand_Move">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="774">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
+              <folding>
+                <element signature="e#810#828#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,6 +89,7 @@
         <option value="$PROJECT_DIR$/titanic_survival_exploration/titanic_survival_exploration.ipynb" />
         <option value="$PROJECT_DIR$/titanic_survival_exploration/test.ipynb" />
         <option value="$PROJECT_DIR$/titanic_survival_exploration/Test.py" />
+        <option value="$PROJECT_DIR$/boston_housing/Pred_Sand_Move" />
       </list>
     </option>
   </component>
@@ -82,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,13 +117,17 @@
             <path>
               <item name="MLND_Projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="MLND_Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="boston_housing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MLND_Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MLND_Projects" type="462c0819:PsiDirectoryNode" />
               <item name="titanic_survival_exploration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -160,7 +189,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="943" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -207,6 +236,30 @@
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boston_housing/boston_housing.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boston_housing/visuals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boston_housing/Pred_Sand_Move">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="e#810#828#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
